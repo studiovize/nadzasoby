@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*@import "../../node_modules/dropzone/dist/dropzone.css";*/
+
+svg {
+    display: block;
+    width: 100%;
+}
+
+.md-formatted {
+
+}
+
+.md-formatted ul {
+    list-style: initial;
+    margin-left: 1rem;
+}
+
+
+.md-formatted blockquote {
+    border-left: 2px solid currentColor;
+    padding-left: 1rem;
+}
+
+label[for] {
+    cursor: pointer;
+}
+
+select,
+input[type=checkbox],
+input[type=radio] {
+    cursor: pointer;
+}
+
+.list-inside li {
+    padding-left: 1.4rem;
+    text-indent: -1.4rem;
+}
+
+.fake-square {
+    @apply relative;
+    /*padding-top: 100%;*/
+}
+
+.fake-square:after {
+    content: "";
+    @apply block;
+    @apply pb-full;
+    /*padding-bottom: 100%;*/
+}
+
+.absolute-center {
+    @apply absolute;
+    @apply top-1/2;
+    @apply left-1/2;
+    @apply transform;
+    @apply -translate-y-1/2;
+    @apply -translate-x-1/2;
+}
+
+#contact-form {
+
+}
+
+#contact-form .result {
+    @apply opacity-0;
+    @apply pointer-events-none;
+    @apply transition-opacity;
+    @apply duration-200;
+    @apply ease-in-out;
+}
+
+#contact-form .result-success,
+#contact-form .result-error {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .3s ease .1s, transform .4s ease .1s;
+}
+
+#contact-form.success .result,
+#contact-form.error .result {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#contact-form.success .result-success {
+    opacity: 1;
+    transform: none;
+}
+
+#contact-form.error .result-error {
+    opacity: 1;
+    transform: none;
+}
+
+/* Floating contact form */
+#floating-contact-trigger {
+
+}
+
+#floating-contact-form {
+    transform: scale(0);
+    pointer-events: none;
+    transform-origin: bottom right;
+}
+
+#floating-contact-form.active {
+    transform: scale(1);
+    pointer-events: all;
+}
